@@ -1,4 +1,5 @@
 # gliding-collective-rotation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15776113.svg)](https://doi.org/10.5281/zenodo.15776113)
 
 Brownian dynamics simulation for active Brownian particles and
 active bead-spring chains.
