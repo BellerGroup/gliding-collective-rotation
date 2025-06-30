@@ -65,6 +65,12 @@ generates a sequence of snapshots from all the available timepoints.
 
 ## Requirements
 
+The following Python packages should be installed before running
+
+- numpy
+- numba
+- matplotlib
+
 Works with
 
 - python version >= 3.6.4
