@@ -1,7 +1,11 @@
-# Brownian-Dynamics
+# gliding-collective-rotation
 
 Brownian dynamics simulation for active Brownian particles and
 active bead-spring chains.
+
+This repository is a snapshot of the "Brownian-Dynamics" code base of the Beller Group at Johns Hopkins University, for the purpose of sharing code and scripts used in the manuscript Athani et al., "Gliding microtubules exhibit tunable collective rotation driven by chiral active forces", 2025. 
+
+## Active Brownian dynamics framework
 
 Employs a WCA/Lennard-Jones potential so that beads have steric repulsion
 and, optionally, a short-range attraction. Particles on the same chain
@@ -12,11 +16,13 @@ randomly diffuses or is locked to the local tangent of the chain.
 Uses a second-order stochastic Runge-Kutta update algorithm. Computation
 is CPU-based, with optional multithreading, and accelerated using the just-in-time compilation functionality of Numba (https://numba.pydata.org/).
 
+## Usage
+
 Many options are accessible as command line flags. For descriptions of these, type
 
 >		./BDsim.py --help
 
-## Example usage
+Example: 
 
 >		./BDsim.py -f 'test' --save_state_every 100 --n_chains 4 --chain_length 7 --Lx 20
 
@@ -38,7 +44,7 @@ Lengths are measured in units of the steric repulsion size r\_WCA = repel_d_max 
 
 ## Analysis tools
 
-(This section is under construction.) The file analysis.py contains some tools for working with saved results from previous runs within the Python intepreter. The analysis.recall() function loads bead positions along with simulation parameters, creating a "beads" Python object (for data) and "sim" Python dictionary (for parameters) that can then be passed to other functions in the package. For example, the bead positions from the third saved timepoint of a run called "test" can be recovered by
+The file analysis.py contains some tools for working with saved results from previous runs within the Python intepreter. The analysis.recall() function loads bead positions along with simulation parameters, creating a "beads" Python object (for data) and "sim" Python dictionary (for parameters) that can then be passed to other functions in the package. For example, the bead positions from the third saved timepoint of a run called "test" can be recovered by
 
 >   \>\>\> from analysis import * \
 >   \>\>\> recall('test',2)\["beads"\].pos
@@ -64,18 +70,8 @@ Works with
 - python version >= 3.6.4
 - numba version >= 0.50.1
 
-## To-dos
-
-- need option for Lx != Ly != Lz
-- temperature quench initialization option
-- make init_grow faster by increasing rest_lengths within SRK_jit
-
-## Known issues
-- Implementation of E field is not quantitatively physically correct
-- Euler step (SRK_order=1) is broken
-
 ## Authors
 
-Written by Daniel Beller & Madhuvanti Athani, 2020-2021.
+Written by Daniel Beller & Madhuvanti Athani, 2020-2024.
 
 d.a.beller@jhu.edu, mathani1@alumni.jhu.edu
