@@ -28,15 +28,19 @@ The following Python packages should be installed before running
 
 For example, you might set up a virtual environment like this: 
 
->   python3 -m venv gliding-collective-rotation-env
->   source gliding-collective-rotation-env/bin/activate
->   python3 -m pip install numpy numba matplotlib scipy
->   chmod +x Chiral_parameters_script.sh
+```sh
+python3 -m venv gliding-collective-rotation-env
+source gliding-collective-rotation-env/bin/activate
+python3 -m pip install numpy numba matplotlib scipy
+chmod +x Chiral_parameters_script.sh
+```
 
 Then you will be able to run 
->   ./Chiral_parameters_script.sh
+```sh
+./Chiral_parameters_script.sh
+```
 
-Works with
+### Works with
 
 - python version >= 3.6.4
 - numba version >= 0.50.1
