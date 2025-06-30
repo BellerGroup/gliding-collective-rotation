@@ -16,6 +16,31 @@ randomly diffuses or is locked to the local tangent of the chain.
 Uses a second-order stochastic Runge-Kutta update algorithm. Computation
 is CPU-based, with optional multithreading, and accelerated using the just-in-time compilation functionality of Numba (https://numba.pydata.org/).
 
+
+## Requirements
+
+The following Python packages should be installed before running
+
+- numpy
+- numba
+- matplotlib
+- scipy
+
+For example, you might set up a virtual environment like this: 
+
+>   python3 -m venv gliding-collective-rotation-env
+>   source gliding-collective-rotation-env/bin/activate
+>   python3 -m pip install numpy numba matplotlib scipy
+>   chmod +x Chiral_parameters_script.sh
+
+Then you will be able to run 
+>   ./Chiral_parameters_script.sh
+
+Works with
+
+- python version >= 3.6.4
+- numba version >= 0.50.1
+
 ## Usage
 
 Many options are accessible as command line flags. For descriptions of these, type
@@ -62,19 +87,6 @@ generates a picture of the bead positions at the third saved timepoint of 'test'
 >   \>\>\> animate('test')
 
 generates a sequence of snapshots from all the available timepoints.
-
-## Requirements
-
-The following Python packages should be installed before running
-
-- numpy
-- numba
-- matplotlib
-
-Works with
-
-- python version >= 3.6.4
-- numba version >= 0.50.1
 
 ## Authors
 
